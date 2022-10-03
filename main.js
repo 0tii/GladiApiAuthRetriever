@@ -29,13 +29,12 @@ function exportAuth() {
 function exportFile(cookie, sh, serverId) {
     //prepare format and encrypt to b64
     var content = serverId + "||" + cookie + "||" + sh;
-    //content = btoa(content);
+    content = btoa(content);
 
     //todo custom passcode encryption
     var pass = document.getElementById("password").value;
     if(pass !== "" && pass !== null && pass !== undefined){
-        var crypto = document.getElementById("crypto");
-        var content = crypto.AES.encrypt(content, pass);
+        var content = CryptoJS.AES.encrypt(content, pass);
     }
 
     //create file and download
