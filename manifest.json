@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "Gladiatus Auth Retriever",
+    "description": "Retrieves an auth object to be used with GladiApi from a logged-in character",
+    "version": "0.0.1",
+    "icons": {
+        "16": "/icons/swords16.png",
+        "32": "/icons/swords32.png",
+        "64": "/icons/swords64.png",
+        "128": "/icons/swords128.png"
+    },
+    "permissions": [
+        "downloads",
+        "cookies",
+        "tabs"
+    ],
+    "host_permissions": [
+        "http://*.gladiatus.gameforge.com/game/index.php*",
+        "https://*.gladiatus.gameforge.com/game/index.php*"
+    ],
+    "action": {
+        "matches": [
+            "http://*.gladiatus.gameforge.com/game/index.php*",
+            "https://*.gladiatus.gameforge.com/game/index.php*"
+        ],
+        "default_popup": "ui.html"
+    },
+    "externally_connectable": {
+        "matches": [
+            "http://*.gladiatus.gameforge.com/game/index.php*",
+            "https://*.gladiatus.gameforge.com/game/index.php*"
+        ]
+    }
+}
