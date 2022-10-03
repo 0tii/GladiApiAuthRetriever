@@ -13,4 +13,4 @@ Once logged in, select the extension from the extension list and click it. The e
 That auth object can then be used to authenticate a **GladiApi** character, until you log into the character from a different browser.
 
 ## Screenshot
-![screenshot](https://i.imgur.com/NvQsVsL.png)
+![screenshot](https://i.imgur.com/3SVxlHH.png)

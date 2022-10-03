@@ -31,12 +31,6 @@ function exportFile(cookie, sh, serverId) {
     var content = serverId + "||" + cookie + "||" + sh;
     content = btoa(content);
 
-    //todo custom passcode encryption
-    var pass = document.getElementById("password").value;
-    if(pass !== "" && pass !== null && pass !== undefined){
-        var content = CryptoJS.AES.encrypt(content, pass);
-    }
-
     //create file and download
     var blob = new Blob([content], { type: "application/octet-stream" });
     var url = URL.createObjectURL(blob);
@@ -46,3 +40,4 @@ function exportFile(cookie, sh, serverId) {
         saveAs: true
     });
 }
+
