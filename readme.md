@@ -30,7 +30,7 @@ Chrome has made it almost impossible to install third-party extensions that are 
 - Select 'Load Temporary Add-on'
 - Select the manifest.json file from the downloaded source
 
-* Firefox has to reimport the plugin on each start, as support for MV3 is nightly.
+*Firefox has to reimport the plugin on each start, as support for MV3 is nightly.
 
 ## How to use
 Start the game in your browser and log into your character. 
