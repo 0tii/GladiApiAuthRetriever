@@ -2,35 +2,76 @@
   html {
     background-color: rgb(41, 44, 53);
     color: orange;
-    width: 250px; 
+    width: 250px;
   }
 
-  #logo-div{
+  #logo-div, .flex-div {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
   }
 
-  #logo{
+  #logo {
     width: 64px;
   }
 
-  input{
+  input {
     box-sizing: border-box;
   }
 
+  h1,
+  p {
+    text-align: center;
+  }
+
+  .gray{
+    color: rgb(134, 111, 67);
+  }
+
+  button {
+    border: 0;
+    box-sizing: border-box;
+    outline: 0;
+    width: 179px;
+    height: 26px;
+    color: #bfae54;
+    font-weight: bold;
+    background-position: 0 0;
+    background-image: url(https://gf2.geo.gfsrv.net/cdnd7/7850696ce9bc0251751e88456338a8.png);
+    background-repeat: no-repeat;
+  }
+
+
+  #password{
+    border: 1px solid rgb(72, 72, 72);
+    width: 179px;
+    height: 26px;
+    box-sizing: border-box;
+    background-color: rgb(255, 183, 119);
+    color: rgb(26, 26, 26);
+    margin-bottom: 10px;
+  }
 </style>
 
 <html>
-  <head>
-    <title>Save Gladiatus Auth Object</title>
-  </head>
-  <body>
-    <div id="logo-div">
-      <img src="/icons/swords64.png" id="logo">
-    </div>
-      <h1>Export Character Auth</h1>
-      <p>Press <b>Export</b> to downlaod your current character's auth object.</p>
-      <button id="exportAuth">Export</button>
-      <script src="main.js"></script>
-  </body>
+<head>
+  <title>Save Gladiatus Auth Object</title>
+</head>
+
+<body>
+  <div id="logo-div">
+    <img src="/icons/swords64.png" id="logo">
+  </div>
+
+  <h1>Export Character Auth Object</h1>
+  <p>Press <b>Export</b> to download the current character's auth object. Optionally enter a password to encrypt the auth data with.</p>
+  <p class="gray"><i>Please note that the password has to be supplied to the character constructor/factory to authenticate with an encrypted auth object.</i></p>
+  <div class="flex-div">
+    <input type="password" id="password" placeholder="(optional) encryption pass"/>
+  </div>
+  <div class="flex-div">
+    <button id="exportAuth">Export</button>
+  </div>
+  <script src="main.js"></script>
+</body>
+
 </html>

@@ -7,7 +7,7 @@ function exportAuth() {
         let url = tabs[0].url;
 
         if (!url.includes("gladiatus.gameforge.com/game/index.php")) {
-            alert("Please use this extension only on a gladiatus tab.");
+            alert("Please use this extension only on a logged-in gladiatus character tab.");
             return;
         }
 
@@ -29,9 +29,14 @@ function exportAuth() {
 function exportFile(cookie, sh, serverId) {
     //prepare format and encrypt to b64
     var content = serverId + "||" + cookie + "||" + sh;
-    content = btoa(content);
+    //content = btoa(content);
 
     //todo custom passcode encryption
+    var pass = document.getElementById("password").value;
+    if(pass !== "" && pass !== null && pass !== undefined){
+        var crypto = document.getElementById("crypto");
+        var content = crypto.AES.encrypt(content, pass);
+    }
 
     //create file and download
     var blob = new Blob([content], { type: "application/octet-stream" });
