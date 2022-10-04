@@ -42,15 +42,17 @@ function exportFile(cookie, sh, serverId, userAgent) {
     content = btoa(content);
 
     //(optional) encrypt with password
-    let pass = document.getElementById('password').value
-    if (!pass === '' && !pass === undefined && !pass === null)
+    let pass = document.getElementById('password').value;
+    if (pass !== '' && pass !== undefined && pass !== null){
+        alert(`pass: ${pass}`);
         content = encrypt(content, pass);
+    }
 
     //create file and download
     const blob = new Blob([content], { type: 'application/octet-stream' });
     const url = URL.createObjectURL(blob);
     chrome.downloads.download({
-        url: url, // The object URL can be used as download URL
+        url: url,
         filename: `${sh}.gao`,
         saveAs: true
     });
