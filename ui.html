@@ -63,10 +63,16 @@
   </div>
 
   <h1>Export Character Auth Object</h1>
-  <p>Press <b>Export</b> to download the current character's auth object.</p>
+  <p>Press <b>Export</b> to download the current character's auth object. Optionally you can enter a password to encrypt your authentication data with.</p>
+  <p class="gray">Please note that if you choose to encrypt your auth object you will have to import it using the constructor/factory overload that takes a password parameter.</p>
+  <div class="flex-div">
+    <input type="password" id="password" placeholder="[optional] enter a password"/>
+  </div>
   <div class="flex-div">
     <button id="exportAuth">Export</button>
   </div>
+  <script src="crypto.js"></script>
+  <script src="encryption.js"></script>
   <script src="main.js"></script>
 </body>
 

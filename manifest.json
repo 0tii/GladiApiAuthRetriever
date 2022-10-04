@@ -30,5 +30,16 @@
             "http://*.gladiatus.gameforge.com/game/index.php*",
             "https://*.gladiatus.gameforge.com/game/index.php*"
         ]
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*.gladiatus.gameforge.com/game/index.php*",
+                "https://*.gladiatus.gameforge.com/game/index.php*"
+            ],
+            "js": [
+                "userAgent.js"
+            ]
+        }
+    ]
 }

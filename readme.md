@@ -1,9 +1,16 @@
-# ⚔️🔓 GladiApi Auth Retriever
+# ⚔️🔓 GladiatusApi Auth Retriever
 
-A cross-browser extension to retrieve an auth object for a logged-in gladiatus character. Firefox support is nightly, as manifest V3 is, too.
+A cross-browser extension to retrieve an authentication object for a gladiatus character.
+
+## What is this about?
+Due to limitations such as captchas, [GladiatusApi](https://github.com/0tii/GladiatusApi) can not automatically retrieve player data and authenticate against gameforge servers. Bypassing captcha would be an endless cat-and-mouse-game which I am not willing to even attempt.
+
+It is, however, possible to authenticate as a character with http requests only, by using the cookie and session hash of a character logged into a browser. That requires manually getting the cookie, session hash and server id every time you switch browsers or log in from a different location (as that generates a new session hash and, within the cookie, a new session id).
+
+With this extension it's as simple as pressing a button and saving the auth object, then importing that and passing it to the character constructor/factory. Using a designated target folder to save the file to makes this even more streamlined.
 
 ## Install
-Chrome has made it almost impossible to install third-party extensions that are not on the web store (with a convenient 5€ developer fee).
+Chromium has made it almost impossible to install third-party extensions that are not on the web store (with a convenient 5€ developer fee), so you have to install this extension via **developer mode**.
 
 **Chrome**:
 - Download the source
@@ -30,16 +37,18 @@ Chrome has made it almost impossible to install third-party extensions that are 
 - Select 'Load Temporary Add-on'
 - Select the manifest.json file from the downloaded source
 
-*Firefox has to reimport the plugin on each start, as support for MV3 is nightly.
-
-## How to use
-Start the game in your browser and log into your character. 
-
-Once logged in, select the extension from the extension list and click it. The extension window will open and present you with an "export" button, which will download the characters auth object as a `.gao` (**g**ladiatus **a**uth **o**bject) file.
-
-That auth object can then be used to authenticate a **[GladiApi](https://github.com/0tii/GladiatusApi)** character, until you log into that character from a different browser.
-
-For instructions how to use the auth object to authenticate, refer to the [GladiApi](https://github.com/0tii/GladiatusApi) doc.
+*Firefox users have to reimport the plugin on each start, as support for manifest V3 is nightly.
 
 ## Screenshot
-![screenshot](https://i.imgur.com/3SVxlHH.png)
+![screenshot](https://i.imgur.com/tiiKzmG.png)
+
+## How to use
+Log into your character in your browser. 
+
+While on the game tab, select the extension from the extension list and click it. The extension window (*see screenshot*) will open and present you with an "export" button, which will download the characters auth object as a `.gao` (**g**ladiatus **a**uth **o**bject) file.
+
+Optionally you can enter a password in the input text field which will be used to encrypt your authentication data with.
+
+That auth object can then be used to authenticate a **[GladiatusApi](https://github.com/0tii/GladiatusApi)** character, until you log into that character from a different browser.
+
+For instructions how to use the auth object to authenticate, refer to the [GladiatusApi](https://github.com/0tii/GladiatusApi) doc.
