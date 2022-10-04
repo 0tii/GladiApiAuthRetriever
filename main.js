@@ -44,7 +44,6 @@ function exportFile(cookie, sh, serverId, userAgent) {
     //(optional) encrypt with password
     let pass = document.getElementById('password').value;
     if (pass !== '' && pass !== undefined && pass !== null){
-        alert(`pass: ${pass}`);
         content = encrypt(content, pass);
     }
 
